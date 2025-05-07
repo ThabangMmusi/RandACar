@@ -61,7 +61,6 @@ public class CarBookingPanel extends RoundedPanel {
     private final JComboBox<String> durationCombo;
     private final ButtonGroup fuelGroup;
     private final ButtonGroup driverGroup;
-    private final JSpinner dateSpinner;
     private final JLabel totalLabel;
     private final JButton calcBtn;
     private final JLabel carRentalCostDisplayLabel;
@@ -132,22 +131,7 @@ public class CarBookingPanel extends RoundedPanel {
                 "/day", cost -> driverCost = cost);
         add(createSectionPanel(66, driverCostLabel, driverOpGroup));
 
-        // Date picker section
-        // JPanel dateOuterPanel = createLeftAlignedPanel();
-        // dateOuterPanel.add(Box.createHorizontalStrut(6));
-        // dateSpinner = createDatePicker();
-        // dateOuterPanel.add(dateSpinner.getComponent(0));
-        // add(createSectionPanel(66, createLabel("Pick-up Date:"), dateOuterPanel));
-           // --- Date Picker Section ---
-           JPanel dateOuterPanel = createLeftAlignedPanel();
-           dateOuterPanel.add(createLabel("Pick-up Date:"));
-           this.dateSpinner = createDatePicker();
-           dateOuterPanel.add(dateSpinner.getParent()); // Add the panel containing spinner+button
-           add(dateOuterPanel); // Keep original gap logic here
-        //    add(createSectionDivider(), "growx"); // Restore divider
-   
-   
-
+        add(Box.createVerticalStrut(10)); // Add some space at the bottom
         // Calculation section
         calcBtn = createButton("Calculate Total", 102, 32);
         totalLabel = createTotalLabel();
@@ -241,26 +225,6 @@ public class CarBookingPanel extends RoundedPanel {
         combo.setForeground(Color.BLACK);
         combo.setBackground(Color.WHITE);
         return combo;
-    }
-
-    /**
-     * Creates a date picker spinner with calendar button
-     */
-    private JSpinner createDatePicker() {
-        JSpinner spinner = new JSpinner(new SpinnerDateModel());
-        spinner.setEditor(new JSpinner.DateEditor(spinner, "yyyy-MM-dd"));
-
-        JPanel dateSpinnerPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 0, 0));
-        dateSpinnerPanel.setOpaque(false);
-        dateSpinnerPanel.add(spinner);
-
-        JButton calendarBtn = new JButton("\uD83D\uDCC5");
-        calendarBtn.setFocusable(false);
-        calendarBtn.setMargin(new Insets(2, 2, 2, 2));
-        calendarBtn.addActionListener(e -> spinner.requestFocusInWindow());
-        dateSpinnerPanel.add(calendarBtn);
-
-        return spinner;
     }
 
     /**
