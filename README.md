@@ -7,7 +7,6 @@ This is a Java Swing GUI application to estimate rental costs for different cars
 - Rental duration (1, 3, or 7 days)
 - Fuel policy (Prepaid, Full-to-Full)
 - Driver Options (Self-Driving, Assign Driver)
-- Pick-up date selection
 - Cost calculation based on selections
 
 ## How to Run
