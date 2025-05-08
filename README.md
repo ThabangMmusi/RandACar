@@ -14,4 +14,4 @@ This is a Java Swing GUI application to estimate rental costs for different cars
 Use the script:
    .\build.ps1
 
-Ensure you have Java installed.
+Ensure you have Java 21 installed.
