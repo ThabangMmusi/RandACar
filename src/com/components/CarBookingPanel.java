@@ -100,11 +100,11 @@ public class CarBookingPanel extends RoundedPanel {
         durationOuterPanel.add(durationCombo);
         add(createSectionPanel(76, carRentalCostDisplayLabel, durationOuterPanel));
 
-        this.addonsCostLabel = createLabel("Add-ons: R0");
+        this.addonsCostLabel = createLabel("Extras: R0");
         this.actualAddonsCheckBoxes = new ArrayList<>();
         JComponent addOnsGroup = createCheckBoxGroupWithValue(
                 new String[]{ADDON_BABY_SEAT, ADDON_ROADSIDE_SUPPORT},
-                ADDON_PRICES, this.addonsCostLabel, "Add-ons",
+                ADDON_PRICES, this.addonsCostLabel, "Extras",
                 cost -> addOnsTotal = cost, this.actualAddonsCheckBoxes);
         add(createSectionPanel(66, this.addonsCostLabel, addOnsGroup));
 
@@ -225,7 +225,7 @@ public class CarBookingPanel extends RoundedPanel {
             updateCarRentalCostDisplay();
 
             if (this.actualAddonsCheckBoxes != null && this.addonsCostLabel != null) {
-                updateCostDisplay(this.actualAddonsCheckBoxes, ADDON_PRICES, this.addonsCostLabel, "Add-ons", cost -> addOnsTotal = cost);
+                updateCostDisplay(this.actualAddonsCheckBoxes, ADDON_PRICES, this.addonsCostLabel, "Extras", cost -> addOnsTotal = cost);
             }
 
             if (this.actualInsuranceCheckBoxes != null && this.insuranceCostLabel != null) {
@@ -536,7 +536,7 @@ public class CarBookingPanel extends RoundedPanel {
             updateCarRentalCostDisplay();
         } else {
             carRentalCostDisplayLabel.setText("Car Rental: R0");
-            if (addonsCostLabel != null) addonsCostLabel.setText("Add-ons: R0");
+            if (addonsCostLabel != null) addonsCostLabel.setText("Extras: R0");
             if (insuranceCostLabel != null) insuranceCostLabel.setText("Insurance: R0");
             if (driverCostLabel != null) driverCostLabel.setText("Driver Choice: R0");
             if (fuelCostLabel != null) fuelCostLabel.setText("Fuel Policy: R0");
