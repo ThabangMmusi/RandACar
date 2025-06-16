@@ -10,7 +10,7 @@ This is a Java Swing GUI application to estimate rental costs for different cars
 - Cost calculation based on selections
 
 ## Screenshots
-![Before Estimation](Screenshot%20-%20Before%20Estimation.png)
+   ![Before Estimation](Screenshot%20-%20Before%20Estimation.png)
 ![After Estimation](Screenshot%20-%20After%20Estimation.png)
 
 ## How to Run
